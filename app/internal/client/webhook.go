@@ -1,8 +1,9 @@
 package client
 
 import (
-	e "app/pkg/errors"
 	"app/internal/config"
+	e "app/pkg/errors"
+
 	tele "gopkg.in/telebot.v4"
 )
 

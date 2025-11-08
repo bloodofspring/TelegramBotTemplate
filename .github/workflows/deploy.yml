@@ -25,7 +25,7 @@ jobs:
           file: .docker/Dockerfile
           target: prod
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/grimoire-bot:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/${{ vars.DOCKER_PROJECT_NAME }}:latest
 
       - name: Deploy to VPS via SSH
         uses: appleboy/ssh-action@v1.0.3

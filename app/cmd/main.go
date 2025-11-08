@@ -3,7 +3,6 @@ package main
 import (
 	"app/internal/client"
 	"app/internal/config"
-	"app/internal/handlers"
 	"app/pkg/database"
 )
 
@@ -23,7 +22,7 @@ func main() {
 		err.Fatal()
 	}
 
-	err = handlers.LoadHandlers()
+	err = client.LoadHandlers(bot)
 	if !err.IsNil() {
 		err.Fatal()
 	}

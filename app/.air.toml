@@ -3,17 +3,15 @@ testdata_dir = "testdata"
 
 [build]
 # Just plain old shell command. You could use `make` as well.
-cmd = "go build -o ./tmp/main ."
+cmd = "go build -o ./tmp/main ./cmd/main.go"
 # Binary file yields from `cmd`.
 bin = "tmp/main"
 # Customize binary.
 full_bin = "APP_ENV=development ./tmp/main"
-# Optional: if you want to use `docker-compose up` directly
-# full_bin = "docker-compose -f .docker/docker-compose.dev.yml up --build"
 # Watch these filename extensions.
 include_ext = ["go", "tpl", "tmpl", "html"]
 # Ignore these filename extensions or directories.
-exclude_dir = ["assets", "tmp", "vendor", "testdata", "pgdata", ".docker"]
+exclude_dir = ["assets", "tmp", "vendor", "testdata"]
 # Watch these directories if you specified.
 include_dir = []
 # Exclude files.
@@ -51,4 +49,5 @@ runner = "green"
 clean_on_exit = true
 
 [screen]
-  clear_on_rebuild = true  # Не очищать экран при пересборке
+  clear_on_rebuild = true
+

@@ -29,7 +29,7 @@ func (hc HandlerChain) Init(timeout time.Duration, handlers ...chainHandler) *Ha
 	return &new
 }
 
-func (hc *HandlerChain) Run(c tele.Context) *e.ErrorInfo {
+func (hc *HandlerChain) Run(c tele.Context) error {
 	ctx, cancel := context.WithTimeout(context.Background(), hc.timeout)
 	defer cancel()
 
