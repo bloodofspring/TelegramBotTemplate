@@ -12,12 +12,12 @@ func TestChain() *handlers.HandlerChain {
 }
 
 func sendTestMessage1(c tele.Context, args *handlers.Arg) (*handlers.Arg, *e.ErrorInfo) {
-	errorInfo := e.Error(c.Reply("Test message 1"), "Failed to send test message 1")
+	errorInfo := e.FromError(c.Reply("Test message 1"), "Failed to send test message 1")
 	return args, errorInfo
 }
 
 func sendTestMessage2(c tele.Context, args *handlers.Arg) (*handlers.Arg, *e.ErrorInfo) {
-	errorInfo := e.Error(c.Reply("Test message 2"), "Failed to send test message 2")
+	errorInfo := e.FromError(c.Reply("Test message 2"), "Failed to send test message 2")
 	return args, errorInfo
 }
 
